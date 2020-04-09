@@ -8,7 +8,7 @@ this docker alread included nginx model.
 
 - mediasoup website and documentation: [mediasoup.org](https://mediasoup.org/)
 - mediasoup support forum: [mediasoup.discourse.group](https://mediasoup.discourse.group/)
-- Mediasoup-demo-cloud :[[github](https://github.com/ysf465639310/CLOUD_MEDIASOUP)]
+- image mediasoup-demo-cloud :[[docker-hub](https://hub.docker.com/r/ysf465639310/mediasoup-demo-cloud)]
 
 ## ENV Variables
 
