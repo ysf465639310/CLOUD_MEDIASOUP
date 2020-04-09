@@ -49,7 +49,7 @@ services:
             - ../nginx:/run/nginx
             
         env_file:
-            - ./config/media.env
+            - ./media.env
         
         command: ["nginx","-c", "/etc/nginx/nginx.conf", "-g", "daemon off;"]
         
