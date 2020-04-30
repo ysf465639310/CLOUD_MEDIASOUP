@@ -1,0 +1,35 @@
+version: '3'
+
+services:         
+    # mediasoup-worker
+    mediasoup:
+        image: ysf465639310/mediasoup-demo-cloud:v3
+        ports:
+            - '${PROTOO_LISTEN_PORT}:${PROTOO_LISTEN_PORT}'
+            - '${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}:${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}/udp'
+            - '${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}:${MEDIASOUP_MIN_PORT}-${MEDIASOUP_MAX_PORT}/tcp'
+        working_dir: /mediasoup/server/
+        
+        #if you want your own config,you can use volume lis this
+        volumes:
+          - /etc/localtime:/etc/localtime
+          - ../../config/config.js:/mediasoup/config/config.js:rw
+          - ../../config/config.js:/mediasoup/server/config.js:rw
+              # - ../data:/data
+              #- ../storage:/storage
+            
+        env_file:
+            - ./media.env
+        
+        command:  ["bash", "start.sh"]
+        
+        networks:
+             cloud_conference:
+                ipv4_address: 172.88.0.3
+networks:
+   cloud_conference:
+      ipam:
+         config:
+         - subnet: 172.88.0.0/16
+           #gateway: 172.88.0.1
+
