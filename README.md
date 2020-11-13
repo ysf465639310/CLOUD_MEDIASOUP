@@ -101,7 +101,7 @@ networks:
 
    ```bash
    root@H3CDATA:/opt/CLOUD_MEDIASOUP# cd mediasoup/compose/
-   root@H3CDATA:/opt/CLOUD_MEDIASOUP/mediasoup/compose# mv media.env .env
+   root@H3CDATA:/opt/CLOUD_MEDIASOUP/mediasoup/compose# cp media.env .env
    ```
 
 2. Step2
